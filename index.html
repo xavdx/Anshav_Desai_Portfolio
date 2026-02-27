@@ -72,9 +72,11 @@
 
   .loader-name {
     font-family: 'Syne', sans-serif;
-    font-size: clamp(2rem, 6vw, 5rem);
+    font-size: clamp(2rem, 8vw, 5rem);
     font-weight: 800;
     letter-spacing: -0.02em;
+    text-align: center;
+    padding: 0 1.5rem;
     background: linear-gradient(135deg, var(--blue-light), var(--purple-light));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -277,8 +279,8 @@
   .btn-ghost:hover { border-color: var(--purple-light); background: rgba(139,92,246,0.08); transform: translateY(-2px); }
 
   .scroll-hint {
-    position: absolute; bottom: 3rem; left: 4rem;
     display: flex; align-items: center; gap: 1rem;
+    margin-bottom: 2rem;
     opacity: 0;
     animation: fadeIn 0.7s 3.8s forwards;
   }
@@ -835,27 +837,38 @@
     .contact-link { padding: 1.5rem; min-height: auto; }
     .cl-name { font-size: 1.2rem; }
 
-    /* Footer info row */
-    div.footer-info-row {
+    /* Footer info row — stack vertically */
+    .footer-info-row {
       flex-direction: column !important;
-      gap: 1.5rem !important;
+      gap: 2rem !important;
       padding: 2rem 1.5rem !important;
       align-items: flex-start !important;
     }
-    div.footer-info-row > div {
+    .footer-info-row > div {
       text-align: left !important;
     }
 
-    /* Footer bar */
+    /* Footer bar — stack copyright, tagline, back to top */
     footer {
       flex-direction: column !important;
-      gap: 0.75rem !important;
-      padding: 1.2rem 1.5rem !important;
+      align-items: center !important;
+      gap: 0.6rem !important;
+      padding: 1.5rem !important;
       text-align: center;
     }
-    footer span { font-size: 0.65rem !important; }
-    footer .passion-text { display: none; }
-    footer a { position: static !important; font-size: 0.65rem !important; }
+    footer span[style] {
+      position: static !important;
+      transform: none !important;
+      font-size: 0.75rem !important;
+      letter-spacing: 0.12em !important;
+    }
+    footer > span:first-child {
+      font-size: 0.65rem !important;
+    }
+    footer a[href="#"] {
+      position: static !important;
+      font-size: 0.65rem !important;
+    }
 
     /* Orbs — smaller on mobile */
     .orb-1 { width: 250px; height: 250px; }
@@ -955,14 +968,14 @@
     <p class="hero-desc">
       Building intelligent systems at the intersection of data, machine learning, and real-world impact. Turning raw datasets into decisions that matter.
     </p>
+    <div class="scroll-hint">
+      <div class="scroll-line"></div>
+      <span class="scroll-text">Scroll to explore</span>
+    </div>
     <div class="hero-cta">
       <a href="#projects" class="btn-primary"><span>View My Work</span></a>
       <a href="#contact" class="btn-ghost">Get In Touch</a>
     </div>
-  </div>
-  <div class="scroll-hint">
-    <div class="scroll-line"></div>
-    <span class="scroll-text">Scroll to explore</span><br><br>
   </div>
 </section>
 
