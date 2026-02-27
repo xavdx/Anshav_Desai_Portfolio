@@ -723,19 +723,155 @@
     opacity: 0.4;
   }
 
-  /* ─── RESPONSIVE ─── */
+  /* ─── HAMBURGER MENU ─── */
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    padding: 4px;
+    z-index: 200;
+  }
+  .hamburger span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: var(--accent);
+    border-radius: 2px;
+    transition: transform 0.3s, opacity 0.3s;
+  }
+  .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .hamburger.open span:nth-child(2) { opacity: 0; }
+  .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+  .mobile-menu {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,14,76,0.97);
+    backdrop-filter: blur(12px);
+    z-index: 150;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2.5rem;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+  }
+  .mobile-menu.open {
+    opacity: 1;
+    pointer-events: all;
+  }
+  .mobile-menu a {
+    font-family: 'Syne', sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--text);
+    text-decoration: none;
+    letter-spacing: -0.01em;
+    transition: color 0.3s;
+  }
+  .mobile-menu a:hover { color: var(--accent); }
+  .mobile-menu .resume-link {
+    font-size: 1rem;
+    padding: 0.7rem 2rem;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    color: var(--accent) !important;
+    background: rgba(139,92,246,0.1);
+    margin-top: 0.5rem;
+  }
+
+  /* ─── RESPONSIVE — TABLET (max 1024px) ─── */
+  @media (max-width: 1024px) {
+    section { padding: 6rem 2.5rem; }
+    #hero { padding: 0 2.5rem; }
+    nav { padding: 1.2rem 2.5rem; }
+    .about-grid { gap: 3rem; }
+    .contact-links { max-width: 100%; }
+  }
+
+  /* ─── RESPONSIVE — MOBILE (max 768px) ─── */
   @media (max-width: 768px) {
-    section, #hero, nav { padding-left: 1.5rem; padding-right: 1.5rem; }
-    .about-grid { grid-template-columns: 1fr; gap: 3rem; }
-    .project-item { grid-template-columns: 1fr; }
-    .project-meta { text-align: left; flex-direction: row; flex-wrap: wrap; align-items: center; }
-    .project-tags { justify-content: flex-start; }
-    .achievements-grid { grid-template-columns: 1fr; }
-    .contact-links { grid-template-columns: 1fr; }
+
+    /* Layout */
+    section { padding: 4rem 1.5rem; }
+    #hero { padding: 0 1.5rem; min-height: 100svh; }
     nav { padding: 1rem 1.5rem; }
+
+    /* Nav — hide links, show hamburger */
     .nav-links { display: none; }
-    .contact-big { font-size: clamp(2.5rem, 12vw, 5rem); }
-    .scroll-hint { left: 1.5rem; }
+    .hamburger { display: flex; }
+    .mobile-menu { display: flex; }
+
+    /* Hero */
+    .hero-title { font-size: clamp(2.8rem, 13vw, 5rem); line-height: 1; margin-bottom: 1.5rem; }
+    .hero-desc { font-size: 0.95rem; margin-bottom: 2rem; }
+    .hero-cta { flex-direction: column; align-items: flex-start; gap: 0.75rem; }
+    .btn-primary, .btn-ghost { width: 100%; text-align: center; padding: 1rem 1.5rem; }
+    .scroll-hint { left: 1.5rem; bottom: 2rem; }
+
+    /* About */
+    .about-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+    .about-text { font-size: 1rem; }
+    .section-title { font-size: clamp(2rem, 10vw, 3rem); margin-bottom: 2rem; }
+
+    /* Projects */
+    .project-item { grid-template-columns: 1fr; gap: 1rem; padding: 1.5rem 0; }
+    .project-name { font-size: 1.4rem; }
+    .project-meta { text-align: left; flex-direction: row; flex-wrap: wrap; align-items: center; gap: 0.5rem; }
+    .project-tags { justify-content: flex-start; }
+    .project-metric { font-size: 1.1rem; }
+
+    /* Achievements */
+    .achievements-grid { grid-template-columns: 1fr; gap: 0; }
+    .ach-card { padding: 1.8rem; }
+    .ach-title { font-size: 1.1rem; }
+
+    /* Contact */
+    .contact-big { font-size: clamp(2.2rem, 13vw, 5rem); margin-bottom: 2rem; }
+    .contact-links { grid-template-columns: 1fr; max-width: 100%; margin-bottom: 2rem; }
+    .contact-link { padding: 1.5rem; min-height: auto; }
+    .cl-name { font-size: 1.2rem; }
+
+    /* Footer info row */
+    div.footer-info-row {
+      flex-direction: column !important;
+      gap: 1.5rem !important;
+      padding: 2rem 1.5rem !important;
+      align-items: flex-start !important;
+    }
+    div.footer-info-row > div {
+      text-align: left !important;
+    }
+
+    /* Footer bar */
+    footer {
+      flex-direction: column !important;
+      gap: 0.75rem !important;
+      padding: 1.2rem 1.5rem !important;
+      text-align: center;
+    }
+    footer span { font-size: 0.65rem !important; }
+    footer .passion-text { display: none; }
+    footer a { position: static !important; font-size: 0.65rem !important; }
+
+    /* Orbs — smaller on mobile */
+    .orb-1 { width: 250px; height: 250px; }
+    .orb-2 { width: 200px; height: 200px; }
+
+    /* Marquee — slightly faster on small screens */
+    .marquee-track { animation-duration: 12s; }
+  }
+
+  /* ─── RESPONSIVE — SMALL PHONES (max 420px) ─── */
+  @media (max-width: 420px) {
+    .hero-title { font-size: clamp(2.2rem, 14vw, 3.5rem); }
+    .contact-big { font-size: clamp(1.8rem, 14vw, 3rem); }
+    .ach-card { padding: 1.4rem; }
+    .project-name { font-size: 1.2rem; }
+    .loader-name { font-size: clamp(1.5rem, 8vw, 3rem); }
   }
 
   /* ─── NUMBER COUNTER ─── */
@@ -770,6 +906,15 @@
   <div class="loader-pct" id="loaderPct">0%</div>
 </div>
 
+<!-- ─── MOBILE MENU OVERLAY ─── -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#about" onclick="closeMobileMenu()">About</a>
+  <a href="#projects" onclick="closeMobileMenu()">Projects</a>
+  <a href="#achievements" onclick="closeMobileMenu()">Achievements</a>
+  <a href="#contact" onclick="closeMobileMenu()">Contact</a>
+  <a href="Resume.pdf" download="Anshav_Desai_Resume.pdf" class="resume-link" onclick="closeMobileMenu()">Resume ↓</a>
+</div>
+
 <!-- ─── NAV ─── -->
 <nav>
   <a href="#" class="nav-logo">Anshav Desai</a>
@@ -787,7 +932,11 @@
       transition: background 0.3s, border-color 0.3s;
     " onmouseover="this.style.background='rgba(139,92,246,0.2)';this.style.borderColor='var(--purple-light)'" onmouseout="this.style.background='rgba(139,92,246,0.08)';this.style.borderColor='var(--border)'">Resume ↓</a></li>
   </ul>
-  </ul>
+  <div class="hamburger" id="hamburger" onclick="toggleMobileMenu()">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
 </nav>
 
 <!-- ─── HERO ─── -->
@@ -1021,7 +1170,7 @@
   </div>
 
   <div class="contact-links reveal stagger-1">
-    <a href="mailto:anshavdesai@gmail.com" class="contact-link">
+    <a href="/cdn-cgi/l/email-protection#adccc3dec5ccdbc9c8deccc4edcac0ccc4c183cec2c0" class="contact-link">
       <span class="cl-type">Email</span>
       <span class="cl-name">Send a Message</span>
       <span class="cl-arrow">↗</span>
@@ -1047,7 +1196,7 @@
 </style>
 
 <!-- ─── FOOTER ─── -->
-<div style="
+<div class="footer-info-row" style="
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
@@ -1105,7 +1254,7 @@
 
 
 <!-- ─── SCRIPTS ─── -->
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 // ── CURSOR
 const cursor = document.getElementById('cursor');
 const ring = document.getElementById('cursorRing');
@@ -1186,6 +1335,32 @@ window.addEventListener('scroll', () => {
   });
 });
 
+// ── DISABLE CURSOR ON TOUCH DEVICES
+if (window.matchMedia('(hover: none)').matches) {
+  document.getElementById('cursor').style.display = 'none';
+  document.getElementById('cursorRing').style.display = 'none';
+  document.body.style.cursor = 'auto';
+  document.querySelectorAll('.btn-primary, .btn-ghost, a').forEach(el => {
+    el.style.cursor = 'pointer';
+  });
+}
+
+// ── HAMBURGER MENU
+function toggleMobileMenu() {
+  const menu = document.getElementById('mobileMenu');
+  const burger = document.getElementById('hamburger');
+  menu.classList.toggle('open');
+  burger.classList.toggle('open');
+  document.body.style.overflow = menu.classList.contains('open') ? 'hidden' : '';
+}
+function closeMobileMenu() {
+  const menu = document.getElementById('mobileMenu');
+  const burger = document.getElementById('hamburger');
+  menu.classList.remove('open');
+  burger.classList.remove('open');
+  document.body.style.overflow = '';
+}
+
 // ── LIVE IST CLOCK
 function updateClock() {
   const now=new Date();
@@ -1194,11 +1369,4 @@ function updateClock() {
   const m=String(ist.getMinutes()).padStart(2,'0');
   const s=String(ist.getSeconds()).padStart(2,'0');
   const ms=String(now.getMilliseconds()).padStart(3,'0').slice(0, 2);
-  const el=document.getElementById('live-clock');
-  if (el) el.textContent=`${h}:${m}:${s}:${ms}`;
-}
-updateClock();
-setInterval(updateClock, 10);
-</script>
-</body>
-</html>
+  const el=document.
