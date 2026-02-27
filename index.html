@@ -1369,4 +1369,12 @@ function updateClock() {
   const m=String(ist.getMinutes()).padStart(2,'0');
   const s=String(ist.getSeconds()).padStart(2,'0');
   const ms=String(now.getMilliseconds()).padStart(3,'0').slice(0, 2);
-  const el=document.
+  const el=document.getElementById('live-clock');
+  if (el) el.textContent=`${h}:${m}:${s}:${ms}`;
+}
+updateClock();
+setInterval(updateClock, 10);
+
+</script>
+</body>
+</html>
