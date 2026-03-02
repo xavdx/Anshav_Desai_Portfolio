@@ -100,7 +100,7 @@
     background: linear-gradient(90deg, var(--blue), var(--purple));
     border-radius: 2px;
     width: 0%;
-    animation: loadBar 1.8s 0.5s cubic-bezier(.4,0,.2,1) forwards;
+    animation: loadBar 8s 0.5s linear forwards;                          /* NEW LINE */
   }
   .loader-pct {
     font-family: 'DM Mono', monospace;
@@ -912,11 +912,24 @@
 
 <!-- ─── LOADER ─── -->
 <div id="loader">
-  <div class="loader-name">Pursuit Of Perfection</div>
-  <div class="loader-bar-wrap">
-    <div class="loader-bar" id="loaderBar"></div>
+  <video autoplay muted loop playsinline id="loader-video" style="
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.35;
+    z-index: 0;
+  ">
+    <source src="video.mp4" type="video/mp4"/>
+  </video>
+  <div style="position:relative;z-index:1;display:flex;flex-direction:column;align-items:center;gap:2rem;width:100%;">
+    <div class="loader-name">Pursuit Of Perfection</div>
+    <div class="loader-bar-wrap">
+      <div class="loader-bar" id="loaderBar"></div>
+    </div>
+    <div class="loader-pct" id="loaderPct">0%</div>
   </div>
-  <div class="loader-pct" id="loaderPct">0%</div>
 </div>
 
 <!-- ─── MOBILE MENU OVERLAY ─── -->
@@ -1304,18 +1317,24 @@ document.querySelectorAll('a, button, .skill-tag, .project-item').forEach(el => 
 });
 
 // ── LOADER
-const loader = document.getElementById('loader');
-const pct = document.getElementById('loaderPct');
-let p = 0;
-const interval = setInterval(() => {
-  p = Math.min(p + Math.random() * 4 + 1, 100);
+const loader=document.getElementById('loader');
+const pct=document.getElementById('loaderPct');
+let p=0;
+const duration=8000;
+const tickInterval=50;
+const totalTicks=duration/tickInterval;
+let currentTick=0;
+
+const interval=setInterval(() => {
+  currentTick++;
+  p = Math.min((currentTick / totalTicks) * 100, 100);
   pct.textContent = Math.floor(p) + '%';
   if (p >= 100) {
     clearInterval(interval);
     pct.textContent = '100%';
     setTimeout(() => loader.classList.add('hidden'), 400);
   }
-}, 30);
+}, tickInterval);
 
 // ── SCROLL REVEAL
 const observer = new IntersectionObserver((entries) => {
