@@ -101,7 +101,7 @@
     background: linear-gradient(90deg, var(--blue), var(--purple));
     border-radius: 2px;
     width: 0%;
-    animation: loadBar 8s 0.5s linear forwards;                          /* NEW LINE */
+    animation: loadBar 4s 0.5s linear forwards;                         /* NEW LINE */
   }
   .loader-pct {
     font-family: 'DM Mono', monospace;
@@ -932,6 +932,21 @@
     background-clip: text;
     line-height: 1;
   }
+
+  /* Project links — no default anchor styling */
+  .project-link {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    border-top: 1px solid var(--border);
+  }
+  .project-link:visited { color: inherit; }
+  .project-link .project-item {
+    border-top: none;
+  }
+  .project-link:hover .project-name { color: var(--accent); }
+  .project-link:hover .project-item { padding-left: 1.5rem; }
+  .project-link:hover .project-item::before { transform: scaleY(1); }
 </style>
 </head>
 <body>
@@ -1113,68 +1128,106 @@
   <h2 class="section-title reveal">Selected<br/><span style="background:linear-gradient(135deg,var(--blue-light),var(--purple-light));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">Work.</span></h2>
 
   <div class="projects-list">
+
     <!-- P1 -->
-    <div class="project-item reveal">
-      <div>
-        <div class="project-num">001</div>
-        <div class="project-name">Food Image Classification</div>
-        <p class="project-desc">
-          Designed a complete computer vision pipeline for 10-class food image classification using PyTorch, with stratified splits, image augmentation, and ImageNet normalization. Fine-tuned ResNet-50, ResNet-101, and EfficientNet-B0 with AdamW and cosine scheduling. Interpreted results via confusion matrices and Grad-CAM visualizations, exporting the best model via TorchScript.
-        </p>
-      </div>
-      <div class="project-meta">
-        <div class="project-metric">~0.94 F1 score</div>
-        <div class="project-date">Nov–Dec 2025</div>
-        <div class="project-tags">
-          <span class="ptag">CNN</span>
-          <span class="ptag">Transfer Learning</span>
-          <span class="ptag">PyTorch</span>
-          <span class="ptag">Grad-CAM</span>
+    <a href="https://github.com/xavdx/RGB-Thermal-Alignment-and-Change-Detection.git" target="_blank" class="project-link reveal">
+      <div class="project-item">
+        <div>
+          <div class="project-num">001</div>
+          <div class="project-name">RGB Thermal Alignment & Change Detection</div>
+          <p class="project-desc">
+            Designed a complete computer vision pipeline for two projects: <br>(1) RGB-Thermal Image Alignment (Feature-Based Homography). <br>(2) Scene Change Detection using Image Differencing. Both implemented using Python and OpenCV with fully automated batch processing pipelines.
+            <br><br><b>Click to visit the GitHub repository.</b>
+          </p>
+        </div>
+        <div class="project-meta">
+          <div class="project-metric">Aligned images & detected missing objects</div>
+          <div class="project-date">Dec 2025–Jan 2026</div>
+          <div class="project-tags">
+            <span class="ptag">OpenCV</span>
+            <span class="ptag">NumPy</span>
+            <span class="ptag">SIFT</span>
+            <span class="ptag">RANSAC Homography</span>
+            <span class="ptag">Morphological Processing</span>
+            <span class="ptag">Component Analysis</span>
+          </div>
         </div>
       </div>
-    </div>
+    </a>
 
     <!-- P2 -->
-    <div class="project-item reveal stagger-1">
-      <div>
-        <div class="project-num">002</div>
-        <div class="project-name">Aerial Object Classification</div>
-        <p class="project-desc">
-          Built an end-to-end binary image classification system (Bird vs Drone) using a Custom CNN and EfficientNetB0 with TensorFlow/Keras. Tackled class imbalance, fine-tuned the model, and deployed a Streamlit web application for real-time inference with confidence scores — cloud-hosted and version-controlled on GitHub.
-        </p>
-      </div>
-      <div class="project-meta">
-        <div class="project-metric">98.6% accuracy</div>
-        <div class="project-date">Oct–Nov 2025</div>
-        <div class="project-tags">
-          <span class="ptag">CNN</span>
-          <span class="ptag">PyTorch</span>
-          <span class="ptag">Streamlit</span>
-          <span class="ptag">Deployment</span>
+    <a href="https://github.com/xavdx/Food_image_classification.git" target="_blank" class="project-link reveal stagger-1">
+      <div class="project-item">
+        <div>
+          <div class="project-num">002</div>
+          <div class="project-name">Food Image Classification</div>
+          <p class="project-desc">
+            Designed a complete computer vision pipeline for 10-class food image classification using PyTorch, with stratified splits, image augmentation, and ImageNet normalization. Fine-tuned ResNet-50, ResNet-101, and EfficientNet-B0 with AdamW and cosine scheduling. Interpreted results via confusion matrices and Grad-CAM visualizations, exporting the best model via TorchScript.
+            <br><br><b>Click to visit the GitHub repository.</b>
+          </p>
+        </div>
+        <div class="project-meta">
+          <div class="project-metric">~0.94 F1 score</div>
+          <div class="project-date">Nov–Dec 2025</div>
+          <div class="project-tags">
+            <span class="ptag">CNN</span>
+            <span class="ptag">Transfer Learning</span>
+            <span class="ptag">PyTorch</span>
+            <span class="ptag">Grad-CAM</span>
+          </div>
         </div>
       </div>
-    </div>
+    </a>
 
     <!-- P3 -->
-    <div class="project-item reveal stagger-2">
-      <div>
-        <div class="project-num">003</div>
-        <div class="project-name">Nutrition Paradox: Global View</div>
-        <p class="project-desc">
-          Performed end-to-end ETL and feature engineering on WHO nutrition datasets to analyze obesity and malnutrition trends globally. Built a SQLite analytical database with 25+ SQL queries for temporal and demographic analysis. Developed Power BI dashboards visualizing the obesity vs malnutrition paradox to support public health decisions.
-        </p>
-      </div>
-      <div class="project-meta">
-        <div class="project-metric">25+ SQL queries</div>
-        <div class="project-date">Aug–Sep 2025</div>
-        <div class="project-tags">
-          <span class="ptag">ETL</span>
-          <span class="ptag">SQL</span>
-          <span class="ptag">Power BI</span>
-          <span class="ptag">WHO Data</span>
+    <a href="https://github.com/xavdx/Aerial-Object-Classification-Detection.git" target="_blank" class="project-link reveal stagger-2">
+      <div class="project-item">
+        <div>
+          <div class="project-num">003</div>
+          <div class="project-name">Aerial Object Classification</div>
+          <p class="project-desc">
+            Built an end-to-end binary image classification system (Bird vs Drone) using a Custom CNN and EfficientNetB0 with TensorFlow/Keras. Tackled class imbalance, fine-tuned the model, and deployed a Streamlit web application for real-time inference with confidence scores — cloud-hosted and version-controlled on GitHub.
+            <br><br><b>Click to visit the GitHub repository.</b>
+          </p>
+        </div>
+        <div class="project-meta">
+          <div class="project-metric">98.6% accuracy</div>
+          <div class="project-date">Oct–Nov 2025</div>
+          <div class="project-tags">
+            <span class="ptag">CNN</span>
+            <span class="ptag">PyTorch</span>
+            <span class="ptag">Streamlit</span>
+            <span class="ptag">Deployment</span>
+          </div>
         </div>
       </div>
-    </div>
+    </a>
+
+    <!-- P4 -->
+    <a href="https://github.com/xavdx/Nutrition-Paradox.git" target="_blank" class="project-link reveal stagger-3">
+      <div class="project-item">
+        <div>
+          <div class="project-num">004</div>
+          <div class="project-name">Nutrition Paradox: Global View</div>
+          <p class="project-desc">
+            Performed end-to-end ETL and feature engineering on WHO nutrition datasets to analyze obesity and malnutrition trends globally. Built a SQLite analytical database with 25+ SQL queries for temporal and demographic analysis. Developed Power BI dashboards visualizing the obesity vs malnutrition paradox to support public health decisions.
+            <br><br><b>Click to visit the GitHub repository.</b>
+          </p>
+        </div>
+        <div class="project-meta">
+          <div class="project-metric">25+ SQL queries</div>
+          <div class="project-date">Aug–Sep 2025</div>
+          <div class="project-tags">
+            <span class="ptag">Python 3</span>
+            <span class="ptag">ETL</span>
+            <span class="ptag">SQL</span>
+            <span class="ptag">Power BI</span>
+            <span class="ptag">WHO Data</span>
+          </div>
+        </div>
+      </div>
+    </a>
+
   </div>
 </section>
 
@@ -1234,14 +1287,14 @@
     <a href="mailto:anshavdesai@gmail.com" class="contact-link">
       <div class="cl-marquee">
         <div class="cl-marquee-track">
-          <span class="cl-marquee-item">Send a Message ↗</span>
-          <span class="cl-marquee-item">Send a Message ↗</span>
-          <span class="cl-marquee-item">Send a Message ↗</span>
-          <span class="cl-marquee-item">Send a Message ↗</span>
-          <span class="cl-marquee-item">Send a Message ↗</span>
-          <span class="cl-marquee-item">Send a Message ↗</span>
-          <span class="cl-marquee-item">Send a Message ↗</span>
-          <span class="cl-marquee-item">Send a Message ↗</span>
+          <span class="cl-marquee-item">Email ↗</span>
+          <span class="cl-marquee-item">Email ↗</span>
+          <span class="cl-marquee-item">Email ↗</span>
+          <span class="cl-marquee-item">Email ↗</span>
+          <span class="cl-marquee-item">Email ↗</span>
+          <span class="cl-marquee-item">Email ↗</span>
+          <span class="cl-marquee-item">Email ↗</span>
+          <span class="cl-marquee-item">Email ↗</span>
         </div>
       </div>
       <div class="cl-content">
@@ -1400,7 +1453,7 @@ document.querySelectorAll('a, button, .skill-tag, .project-item').forEach(el => 
 const loader=document.getElementById('loader');
 const pct=document.getElementById('loaderPct');
 let p=0;
-const duration=8000;
+const duration=4000;
 const tickInterval=50;
 const totalTicks=duration/tickInterval;
 let currentTick=0;
