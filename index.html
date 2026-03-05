@@ -101,7 +101,7 @@
     background: linear-gradient(90deg, var(--blue), var(--purple));
     border-radius: 2px;
     width: 0%;
-    animation: loadBar 4s 0.5s linear forwards;                         /* NEW LINE */
+    animation: loadBar 3s 0.5s linear forwards;                         /* NEW LINE */
   }
   .loader-pct {
     font-family: 'DM Mono', monospace;
@@ -1269,24 +1269,24 @@
       <p class="ach-desc">Selected as a member of the college's Elite Club, recognized for academical excellence and initiave.</p>
     </div>
     <div class="ach-card reveal stagger-3">
-      <div class="ach-badge">Education</div>
-      <div class="ach-title">BBA(CA) Graduate</div>
-      <p class="ach-desc">Completed Bachelor's in Business Administration with Computer Applications from Savitribai Phule Pune University to build proficiency in software systems with an additional professional course from IIT-M GUVI HCL to build strong academic focus on data science.</p>
-    </div>
-    <div class="ach-card reveal stagger-4">
       <div class="ach-badge">Research & Impact</div>
       <div class="ach-title">Real-World Deployments</div>
       <p class="ach-desc">Multiple capstone projects deployed end-to-end, from cloud-hosted ML inference APIs to public health analytics dashboards using real WHO datasets.</p>
     </div>
-    <div class="ach-card reveal stagger-5">
+    <div class="ach-card reveal stagger-4">
       <div class="ach-badge">Social Work</div>
       <div class="ach-title">Help Age India Volunteer</div>
       <p class="ach-desc">Actively volunteered for 5 years to raise funds for the elderly people of India.</p>
     </div>
+    <div class="ach-card reveal stagger-5">
+      <div class="ach-badge">Education</div>
+      <div class="ach-title">Additional Courses</div>
+      <p class="ach-desc">1.) Completed a professional Data Science Mastery course from IIT-M GUVI HCL and achieved 95.9% for the same. <br>2.) Completed Artificial Intelligence certification course by MSME PPDC. <br>3.) Machine Learning course by acmegrade with MOOD Indigo IIT-B. <br>4.) IoT using Arduino course by Cognifront. <br>5.)Artificial Intelligence certification course by GUVI HCL held at the IIT-B Techfest.</p>
+    </div>
     <div class="ach-card reveal stagger-6">
       <div class="ach-badge">Sports</div>
       <div class="ach-title">Go Karting Champion</div>
-      <p class="ach-desc">2x Championship Winner in cities including Indore and Nashik, Vice Champion in Virar and Red Rabbit Talent Hunt, Mumbai. Endurance Team Championship Winner in Virar.</p>
+      <p class="ach-desc">1.) Grand Prix Championship Winner in Indore, 2026. <br>2.) Endurance Team Championship Winner in Virar, 2026. <br>3.) Vice Champion of the Red Rabbit Talent Hunt, Mumbai 2025. <br>4.) Rising Star Medal Winner at the Red Rabbit Talent Hunt, Pune 2025.<br>5.) Championship Runner-Up in Virar, 2024. <br>6.) Championship Winner in Nashik, 2024.</p>
     </div>
   </div>
 </section>
@@ -1484,7 +1484,7 @@ document.querySelectorAll('a, button, .skill-tag, .project-item').forEach(el => 
 const loader=document.getElementById('loader');
 const pct=document.getElementById('loaderPct');
 let p=0;
-const duration=4000;
+const duration=3000;
 const tickInterval=50;
 const totalTicks=duration/tickInterval;
 let currentTick=0;
