@@ -9,8 +9,18 @@
 <meta property="og:type" content="website">
 <meta property="og:title" content="Anshav Desai · Data Science &amp; Machine Learning">
 <meta property="og:description" content="Machine learning and data science projects, internships and karting race wins. Based in Nashik, India.">
+<meta property="og:url" content="https://anshav-desai-portfolio.vercel.app/">
+<meta property="og:site_name" content="Anshav Desai">
+<meta property="og:image" content="https://anshav-desai-portfolio.vercel.app/og-image.jpg">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Anshav Desai: data science, machine learning and karting championship wins">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://anshav-desai-portfolio.vercel.app/">
 <meta name="theme-color" content="#eeece5" id="tc">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23141413'/%3E%3Crect x='44' y='44' width='12' height='12' fill='%237b2fe0'/%3E%3Ctext x='8' y='42' font-family='Arial Narrow,Arial' font-weight='900' font-size='32' fill='%23eeece5'%3EAD%3C/text%3E%3C/svg%3E">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="preload" href="archivo.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="martian-mono.woff2" as="font" type="font/woff2" crossorigin>
 <script>(()=>{const r=document.documentElement;r.classList.add('js');let t=null;try{t=localStorage.getItem('ad-theme')}catch(e){}if(t==='dark'||t==='light')r.setAttribute('data-theme',t);const dk=t?t==='dark':matchMedia('(prefers-color-scheme: dark)').matches;const m=document.getElementById('tc');if(m)m.setAttribute('content',dk?'#000000':'#eeece5');let skip=!!location.hash||matchMedia('(prefers-reduced-motion: reduce)').matches;try{const c=navigator.connection;if(c&&c.saveData)skip=true}catch(e){}try{if(sessionStorage.getItem('ad-intro'))skip=true}catch(e){}if(!skip){r.classList.add('intro');const l=document.createElement('link');l.rel='preload';l.as='image';l.href='video-poster.jpg';document.head.appendChild(l)}})();</script>
@@ -18,8 +28,8 @@
 @font-face{font-family:"Archivo";src:url(archivo.woff2) format("woff2");font-weight:400 800;font-stretch:62% 100%;font-style:normal;font-display:swap}
 @font-face{font-family:"Martian Mono";src:url(martian-mono.woff2) format("woff2");font-weight:400 700;font-style:normal;font-display:swap}
 :root{
---paper:#eeece5;--paper-2:#e5e2d8;--ink:#141413;--ink-2:#4f4d47;--ink-3:#7d7a72;--rule:#141413;--rule-2:rgba(20,20,19,.17);
---fast:#7b2fe0;--on-fast:#ffffff;--win:#0d8a43;--award:#f0bf1a;--red:#e10600;
+--paper:#eeece5;--paper-2:#e5e2d8;--ink:#141413;--ink-2:#4f4d47;--ink-3:#67645c;--rule:#141413;--rule-2:rgba(20,20,19,.17);
+--fast:#7b2fe0;--on-fast:#ffffff;--win:#0d8a43;--award:#f0bf1a;--red:#e10600;--red-t:#c40500;
 --tower:#eeece5;--tower-ink:#141413;--tower-dim:rgba(20,20,19,.58);--tower-line:rgba(20,20,19,.13);--tower-chip:rgba(20,20,19,.08);--tower-hov:rgba(20,20,19,.05);--tower-act:rgba(20,20,19,.07);--tower-edge:#141413;--nav-acc:#7b2fe0;
 --bar-h:3px;--bar-fill:#7b2fe0;--bar-glow:none;
 --grain:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .085 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
@@ -30,13 +40,13 @@ color-scheme:light}
 /*night tokens: the next two blocks must stay identical, the first is for devices already in dark mode, the second for the night mode button*/
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
 --paper:#121211;--paper-2:#1b1b19;--ink:#ecebe4;--ink-2:#b0ada4;--ink-3:#7f7c74;--rule:#ecebe4;--rule-2:rgba(236,235,228,.15);
---fast:#a774ff;--on-fast:#121211;--win:#3ccf74;--award:#f0bf1a;
+--fast:#a774ff;--on-fast:#121211;--win:#3ccf74;--award:#f0bf1a;--red-t:#ff6a5f;
 --tower:#000;--tower-ink:#ecebe4;--tower-dim:rgba(236,235,228,.5);--tower-line:rgba(236,235,228,.09);--tower-chip:rgba(255,255,255,.1);--tower-hov:rgba(255,255,255,.06);--tower-act:rgba(255,255,255,.08);--tower-edge:#000;--nav-acc:#a774ff;
 --bar-h:2px;--bar-fill:#a774ff;--bar-glow:none;
 --grain:none;--sb-track:#0b0b0a;--sb-thumb:#fdfdfd;color-scheme:dark}}
 :root[data-theme="dark"]{
 --paper:#121211;--paper-2:#1b1b19;--ink:#ecebe4;--ink-2:#b0ada4;--ink-3:#7f7c74;--rule:#ecebe4;--rule-2:rgba(236,235,228,.15);
---fast:#a774ff;--on-fast:#121211;--win:#3ccf74;--award:#f0bf1a;
+--fast:#a774ff;--on-fast:#121211;--win:#3ccf74;--award:#f0bf1a;--red-t:#ff6a5f;
 --tower:#000;--tower-ink:#ecebe4;--tower-dim:rgba(236,235,228,.5);--tower-line:rgba(236,235,228,.09);--tower-chip:rgba(255,255,255,.1);--tower-hov:rgba(255,255,255,.06);--tower-act:rgba(255,255,255,.08);--tower-edge:#000;--nav-acc:#a774ff;
 --bar-h:2px;--bar-fill:#a774ff;--bar-glow:none;
 --grain:none;--sb-track:#0b0b0a;--sb-thumb:#fdfdfd;color-scheme:dark}
@@ -132,11 +142,11 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer;-webki
 /*page*/
 section{padding:clamp(40px,4.7vw,68px) var(--gut)}
 .wrap{max-width:var(--maxw);margin-left:auto;margin-right:auto}
-.sh{display:grid;grid-template-columns:150px 1fr auto;align-items:end;gap:16px;border-top:3px solid var(--rule);padding-top:20px;margin-bottom:clamp(32px,5vw,56px)}
+.sh{display:grid;grid-template-columns:162px 1fr auto;align-items:end;gap:16px;border-top:3px solid var(--rule);padding-top:20px;margin-bottom:clamp(32px,5vw,56px)}
 .sh h2{font-family:var(--f-disp);font-variation-settings:"wdth" 68;font-weight:800;font-size:clamp(2.6rem,7.4vw,5.6rem);line-height:.86;text-transform:uppercase;letter-spacing:-.005em}
-.sec{display:flex;align-items:center;gap:8px;padding-bottom:6px}
+.sec{display:flex;align-items:center;gap:8px;padding-bottom:6px;white-space:nowrap}
 .sec b{display:flex;gap:3px}
-.sec b i{width:14px;height:6px;background:var(--rule-2)}
+.sec b i{width:12px;height:6px;background:var(--rule-2)}
 .sec b i.on{background:var(--fast)}
 .sh .label:last-child{padding-bottom:6px;text-align:right}
 /*hero*/
@@ -234,6 +244,7 @@ td{padding:11px 10px 11px 0;border-bottom:1px solid var(--rule-2);vertical-align
 .row h4 span{font-weight:400;color:var(--ink-2)}
 .row p{color:var(--ink-2);font-size:15px;max-width:68ch;margin-top:5px}
 .badge{font-family:var(--f-mono);font-variation-settings:"wdth" 87.5;font-size:11px;letter-spacing:.04em;text-transform:uppercase;padding:4px 8px;border:1px solid var(--rule);white-space:nowrap}
+.row>span:last-child:not(.badge):not(:empty){font-family:var(--f-mono);font-variation-settings:"wdth" 87.5;font-size:11px;letter-spacing:.04em;text-transform:uppercase;color:var(--ink-2);white-space:nowrap}
 .badge.f{background:var(--fast);border-color:var(--fast);color:var(--on-fast)}
 /*racing*/
 .race-top{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:clamp(28px,4vw,64px);margin-bottom:clamp(32px,5vw,48px);align-items:end}
@@ -267,7 +278,7 @@ td{padding:11px 10px 11px 0;border-bottom:1px solid var(--rule-2);vertical-align
 @media (hover:hover){.rig:hover{background:var(--paper-2)}}
 .rig .pod{--lamp:clamp(22px,3.6vw,34px)}
 .rt-time{font-family:var(--f-mono);font-variation-settings:"wdth" 87.5;font-weight:600;font-size:clamp(2rem,4.6vw,2.8rem);line-height:1;font-variant-numeric:tabular-nums}
-.rt-time.jump{color:var(--red)}
+.rt-time.jump{color:var(--red-t)}
 .rt-msg{font-family:var(--f-mono);font-variation-settings:"wdth" 87.5;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-3);text-align:center}
 .stint{display:flex;flex-direction:column;margin:0;border:1px solid var(--rule);background:var(--paper)}
 .st-reset{padding:2px 0;transition:color .2s}
@@ -280,9 +291,9 @@ td{padding:11px 10px 11px 0;border-bottom:1px solid var(--rule-2);vertical-align
 .st-bar{position:absolute;left:0;top:0;bottom:0;background:var(--ink);transition:width .35s ease}
 .st-row.best .st-bar{background:var(--fast)}
 .st-avg{position:absolute;top:-9px;bottom:-9px;width:0;border-left:1px dashed var(--ink-2)}
-.st-js{position:absolute;left:0;top:50%;transform:translateY(-50%);font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:var(--red);background:var(--paper);padding-right:6px}
+.st-js{position:absolute;left:0;top:50%;transform:translateY(-50%);font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:var(--red-t);background:var(--paper);padding-right:6px}
 .st-v{text-align:right;font-weight:600;font-variant-numeric:tabular-nums}
-.st-row.js .st-v{color:var(--red)}
+.st-row.js .st-v{color:var(--red-t)}
 .st-row.empty .st-v{color:var(--ink-3);font-weight:400}
 .st-row.last .st-no{color:var(--ink);font-weight:600}
 .st-stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-top:1px solid var(--rule-2)}
@@ -467,7 +478,7 @@ section{padding:24px 0;break-inside:avoid-page}
 <main id="main">
 <section id="top" aria-label="Introduction">
 <div class="wrap">
-<p class="kicker label"><span>Data science &amp; machine learning</span><span>Multiple Karting Championships winner</span><span>Founder of IPR Racing Team</span></p>
+<p class="kicker label"><span>Data science &amp; machine learning</span><span>Multiple Karting Championships Wins</span><span>Founder of IPR Racing Team</span></p>
 <h1 class="name" aria-label="Anshav Desai"><span aria-hidden="true">Anshav</span><span aria-hidden="true">Desai<i class="dot"></i></span></h1>
 <div class="hero-grid">
 <div>
@@ -499,7 +510,7 @@ section{padding:24px 0;break-inside:avoid-page}
 </section>
 <section id="profile">
 <div class="wrap">
-<div class="sh"><span class="label sec"><b><i class="on"></i><i></i><i></i></b>Sector 1</span><h2>Profile</h2><span class="label">Nashik, India</span></div>
+<div class="sh"><span class="label sec"><b><i class="on"></i><i></i><i></i><i></i></b>Sector 1</span><h2>Profile</h2><span class="label">Nashik, India</span></div>
 <div class="two">
 <div class="prose">
 <p>I finished a Bachelor of Business Administration with Computer Application at Savitribai Phule Pune University in 2025 with a 9.61 CGPA, then went all in on Data Science.</p>
@@ -528,7 +539,7 @@ section{padding:24px 0;break-inside:avoid-page}
 </section>
 <section id="work">
 <div class="wrap">
-<div class="sh"><span class="label sec"><b><i></i><i class="on"></i><i></i></b>Sector 2</span><h2>Selected work</h2><span class="label">4 projects · newest first</span></div>
+<div class="sh"><span class="label sec"><b><i></i><i class="on"></i><i></i><i></i></b>Sector 2</span><h2>Selected work</h2><span class="label">4 projects · newest first</span></div>
 <div class="cols label" aria-hidden="true"><span>No.</span><span>Project</span><span>Result</span><span>Period</span><span></span></div>
 <details class="run" id="p001">
 <summary><span class="r-no">001</span><span><span class="r-name">RGB-Thermal Alignment &amp; Change Detection</span><span class="r-sub">Two computer vision pipelines in Python and OpenCV</span></span><span class="r-res">2 pipelines<small>Fully batch-automated</small></span><span class="r-per">Dec 25 → Jan 26</span><span class="r-tog" aria-hidden="true">+</span></summary>
@@ -607,7 +618,7 @@ section{padding:24px 0;break-inside:avoid-page}
 </section>
 <section id="log">
 <div class="wrap">
-<div class="sh"><span class="label sec"><b><i></i><i></i><i class="on"></i></b>Sector 3</span><h2>Experience</h2><span class="label">Newest first</span></div>
+<div class="sh"><span class="label sec"><b><i></i><i></i><i class="on"></i><i></i></b>Sector 3</span><h2>Experience</h2><span class="label">Newest first</span></div>
 <div class="grp">
 <h3>Internships <span>2</span></h3>
 <div class="row"><span class="when">Apr 26 → Aug 26</span><div><h4>AI/ML Intern <span>· Siam Computing</span></h4><p>Three solo builds: an F1 RAG chatbot, an AI patient-intake system that writes triage reports, and an insurance navigator. The internship was then extended so I could merge five healthcare AI modules, built separately by different interns, into one platform with a single backend, a single frontend and one role-based login for doctors and patients. Free-tier APIs only.</p></div><span class="badge">4 months</span></div>
@@ -615,15 +626,15 @@ section{padding:24px 0;break-inside:avoid-page}
 </div>
 <div class="grp">
 <h3>Education <span>2</span></h3>
-<div class="row"><span class="when">Apr 25 → Nov 25</span><div><h4>Advanced Programming Professional: Data Science Mastery <span>· GUVI HCL &amp; IIT-M Pravartak</span></h4><p>A rigorous, six month long professional certification course with six data science capstone projects.</p></div><span class="badge">95.94% in Final Test</span></div>
-<div class="row"><span class="when">Jul 22 → May 25</span><div><h4>Bachelor of Business Administration with Computer Application <span>· Savitribai Phule Pune University</span></h4><p>College: Ashoka Centre for Business and Computer Studies, Nashik (Affiliated with Savitribai Phule Pune University).<br>Class Representative, and selected for the college's Elite Club for academic excellence and initiative for 2 consecutive years.</p></div><span class="badge f">CGPA 9.61</span></div>
+<div class="row"><span class="when">Apr 25 → Nov 25</span><div><h4>Advanced Programming Professional: Data Science Mastery <span>· GUVI HCL &amp; IIT-M Pravartak</span></h4><p>A rigorous, six-month professional certification course with six data science capstone projects.</p></div><span class="badge">95.94% in Final Test</span></div>
+<div class="row"><span class="when">Jul 22 → May 25</span><div><h4>Bachelor of Business Administration with Computer Application <span>· Savitribai Phule Pune University</span></h4><p>College: Ashoka Centre for Business and Computer Studies, Nashik (affiliated with Savitribai Phule Pune University).<br>Class Representative, and selected for the college's Elite Club for academic excellence and initiative for 2 consecutive years.</p></div><span class="badge f">CGPA 9.61</span></div>
 </div>
 <div class="grp">
 <h3>Courses &amp; certifications <span>8</span></h3>
 <div class="row"><span class="when">Coursera</span><div><h4>Data Science Math Skills <span>· Duke University</span></h4></div><span class="badge">In Progress</span></div>
 <div class="row"><span class="when">Certificate</span><div><h4>AI Fluency: Framework &amp; Foundations <span>· Anthropic</span></h4></div><span>September 2026</span></div>
-<div class="row"><span class="when">Coursera</span><div><h4>Mathematics for Machine Learning <span>· Imperial College London</span></h4><p>Linear Algebra.</p></div><span>March 2026</span></div>
 <div class="row"><span class="when">Coursera</span><div><h4>Mathematics for Machine Learning <span>· Imperial College London</span></h4><p>Multivariate Calculus.</p></div><span>April 2026</span></div>
+<div class="row"><span class="when">Coursera</span><div><h4>Mathematics for Machine Learning <span>· Imperial College London</span></h4><p>Linear Algebra.</p></div><span>March 2026</span></div>
 <div class="row"><span class="when">Certificate</span><div><h4>Artificial Intelligence <span>· MSME-PPDC</span></h4></div><span>August 2025</span></div>
 <div class="row"><span class="when">Certificate</span><div><h4>Artificial Intelligence <span>· GUVI with HCL, at Techfest, IIT Bombay</span></h4></div><span>December 2024</span></div>
 <div class="row"><span class="when">Course</span><div><h4>IoT using Arduino <span>· Cognifront</span></h4></div><span>September 2024</span></div>
@@ -638,7 +649,7 @@ section{padding:24px 0;break-inside:avoid-page}
 </section>
 <section id="racing">
 <div class="wrap">
-<div class="sh"><span class="label sec"><b><i class="on"></i><i class="on"></i><i class="on"></i></b>Sector 4</span><h2>On track</h2><span class="label">Results 2024 → 2026</span></div>
+<div class="sh"><span class="label sec"><b><i></i><i></i><i></i><i class="on"></i></b>Sector 4</span><h2>On track</h2><span class="label">Results 2024 → 2026</span></div>
 <div class="race-top">
 <div>
 <p>Competitive rental Go-karting across Western & Central India, solo and in team endurance races.</p>
@@ -694,7 +705,7 @@ section{padding:24px 0;break-inside:avoid-page}
 </section>
 <section id="contact">
 <div class="wrap">
-<div class="sh"><span class="label sec"><b><i class="on"></i><i class="on"></i><i class="on"></i></b>Lap Complete</span><h2>Contact</h2><span class="label">IST · GMT+5:30</span></div>
+<div class="sh"><span class="label sec"><b><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></b>Lap Complete</span><h2>Contact</h2><span class="label">IST · GMT+5:30</span></div>
 <p class="lead">Open to freelance projects, collaborations and 3 to 4 month internships. Data, analytics, machine learning and anything with a lap time attached.</p>
 <div class="mail"><a href="mailto:anshavdesai@gmail.com">anshavdesai@gmail.com</a><button class="copy" id="copy" type="button" data-copy="anshavdesai@gmail.com">Copy</button></div>
 <ul class="links">
@@ -842,12 +853,15 @@ try{const v=parseFloat(localStorage.getItem('ad-rt-best'));if(v>0&&v<10)best=v}c
 function lamps(n){rtPods.forEach((p,i)=>p.classList.toggle('on',i<n))}
 function clearR(){rTimers.forEach(clearTimeout);rTimers=[]}
 function arm(){clearR();rs='arming';lamps(0);rtTime.classList.remove('jump');rtTime.textContent='0.000 s';rtMsg.textContent='Wait for lights out';for(let i=1;i<=5;i++)rTimers.push(setTimeout(()=>lamps(i),i*800));rTimers.push(setTimeout(go,4000+300+Math.random()*2600))}
-function go(){rs='go';lamps(0);t0=performance.now();requestAnimationFrame(()=>{if(rs==='go')t0=performance.now()});rtMsg.textContent='Go'}
+//after lights out the display counts up like a stopwatch, the result itself is still measured from the press
+let runRaf=0;
+function runTick(){if(rs!=='go')return;const e=(performance.now()-t0)/1000;if(e>=10){rs='done';rtTime.textContent='10.000 s';rtMsg.textContent='No reaction. Tap to try again';return}rtTime.textContent=e.toFixed(3)+' s';runRaf=requestAnimationFrame(runTick)}
+function go(){rs='go';lamps(0);t0=performance.now();requestAnimationFrame(()=>{if(rs==='go'){t0=performance.now();runRaf=requestAnimationFrame(runTick)}});rtMsg.textContent='Go'}
 function press(){
 lastPress=performance.now();
 if(rs==='idle'||rs==='done'){arm();return}
 if(rs==='arming'){clearR();lamps(0);rs='done';rtTime.textContent='Jump start';rtTime.classList.add('jump');rtMsg.textContent='You went before lights out. Tap to try again';addRun(0,true);return}
-if(rs==='go'){const r=(performance.now()-t0)/1000;rs='done';rtTime.textContent=r.toFixed(3)+' s';if(!best||r<best){best=r;try{localStorage.setItem('ad-rt-best',String(r))}catch(e){}rtMsg.textContent='New personal best. Tap to go again'}else{rtMsg.textContent='Tap to go again'}addRun(r,false)}
+if(rs==='go'){const r=(performance.now()-t0)/1000;rs='done';cancelAnimationFrame(runRaf);rtTime.textContent=r.toFixed(3)+' s';if(!best||r<best){best=r;try{localStorage.setItem('ad-rt-best',String(r))}catch(e){}rtMsg.textContent='New personal best. Tap to go again'}else{rtMsg.textContent='Tap to go again'}addRun(r,false)}
 }
 rig.addEventListener('pointerdown',e=>{if(e.button!==0)return;e.preventDefault();press()});
 rig.addEventListener('keydown',e=>{if(e.key!==' '&&e.key!=='Enter')return;e.preventDefault();if(!e.repeat)press()});
